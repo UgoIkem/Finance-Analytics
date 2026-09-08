@@ -12,30 +12,30 @@ The project covers the complete analytics workflow — from **data preparation a
 
 ## 📌 Project Overview
 
-Financial transaction data can contain valuable information about customer behaviour, revenue patterns, transaction performance and operational outcomes.
+Financial transaction data can provide valuable insights into customer behaviour, transaction patterns, operational performance, and revenue-related metrics.
 
 The objective of this project was to transform raw financial and customer data into an interactive analytical solution that enables users to:
 
 - Monitor key financial KPIs
 - Analyse monthly and yearly transaction trends
 - Compare current performance against the previous year
-- Investigate successful, failed and pending transactions
+- Investigate successful, failed, and pending transactions
 - Analyse transaction performance across customer segments
 - Identify geographic patterns across states
 - Compare different transaction types
 - Analyse customer demographic patterns
-- Dynamically switch between different financial metrics
+- Dynamically switch between financial metrics
 - Drill through from summary-level insights to individual transaction records
 
 ---
 
 ## 🛠️ Tools & Technologies
 
-- **Power BI Desktop** – data modelling, DAX and dashboard development
-- **Power Query** – data preparation and transformation
-- **DAX** – calculated measures and time-intelligence analysis
-- **Power BI Service** – report publishing and online deployment
-- **GitHub** – project documentation and versioned portfolio hosting
+- **Power BI Desktop** — data modelling, DAX, and dashboard development
+- **Power Query** — data preparation and transformation
+- **DAX** — calculated measures and time-intelligence analysis
+- **Power BI Service** — report publishing and online deployment
+- **GitHub** — project documentation and portfolio hosting
 
 ---
 
@@ -50,7 +50,7 @@ Key preparation steps included:
 - Preparing transaction and customer datasets
 - Creating calculated attributes required for analysis
 - Ensuring transaction dates were correctly formatted for time-based analysis
-- Preparing the tables for relationship-based modelling
+- Preparing tables for relationship-based modelling
 
 ---
 
@@ -60,12 +60,12 @@ The project uses a relational model rather than relying on a single flat table.
 
 The core model consists of:
 
-- **finance_transactions** – transaction-level financial data
-- **customers** – customer demographic and segmentation attributes
-- **Calendar Table** – dedicated date dimension for time-intelligence calculations
-- **Dynamic Metric** – field parameter used to dynamically change the metric displayed in selected visuals
+- **finance_transactions** — transaction-level financial data
+- **customers** — customer demographic and segmentation attributes
+- **Calendar Table** — dedicated date dimension for time-intelligence calculations
+- **Dynamic Metric** — field parameter used to dynamically change the metric displayed in selected visuals
 
-The `customers` table and `Calendar Table` connect to the transaction table through one-to-many relationships, allowing customer and date attributes to filter transaction-level measures.
+The `customers` and `Calendar Table` tables connect to the transaction table through one-to-many relationships, allowing customer and date attributes to filter transaction-level measures.
 
 ![Power BI Data Model](images/data-model.png)
 
@@ -85,11 +85,9 @@ DAX measures were developed to calculate the dashboard's core financial KPIs and
 - **Total Fees**
 - **Total Tax**
 
-Previous-year measures were also created to support year-over-year performance analysis.
+Previous-year measures were created to support **year-over-year (YoY) performance analysis**.
 
-The report uses time-intelligence calculations to compare current results against the corresponding period in the previous year.
-
-This enables KPI cards to show not only current performance but also whether each metric has increased or decreased relative to the previous year.
+Time-intelligence calculations compare current results against the corresponding period in the previous year, enabling the KPI cards to show both current performance and the percentage increase or decrease versus the previous year.
 
 ---
 
@@ -104,7 +102,7 @@ A Power BI **Field Parameter** was implemented to allow users to dynamically swi
 
 The selected metric automatically updates the relevant dashboard visuals.
 
-Dynamic titles were also implemented so chart titles change according to the metric selected by the user.
+Dynamic titles were also implemented so that chart titles change according to the metric selected by the user.
 
 This allows a single visual to support multiple analytical perspectives without duplicating charts.
 
@@ -114,36 +112,52 @@ This allows a single visual to support multiple analytical perspectives without 
 
 ![Finance Analytics Dashboard](images/dashboard-overview.png)
 
-The main analysis page provides an executive-level view of financial performance.
+The main analysis page provides an executive-level view of financial and transaction performance.
 
-### Key analyses include:
+### Key Analyses
 
 **Monthly Trend Analysis**  
 Tracks financial performance across months and highlights changes in transaction activity over time.
 
 **Transaction Status Analysis**  
-Breaks transactions into Success, Failed and Pending categories to provide visibility into transaction outcomes.
+Breaks transactions into Success, Failed, and Pending categories to provide visibility into transaction outcomes.
 
 **Customer Segment Analysis**  
-Compares financial performance across Retail, Premium, SME, Corporate and Wealth customer segments.
+Compares financial performance across Retail, Premium, SME, Corporate, and Wealth customer segments.
 
 **Geographic Analysis**  
 Analyses transaction performance across different states.
 
 **Transaction Type Analysis**  
-Compares transaction types across Amount, Fees, Tax and Transaction Count.
+Compares transaction types across Amount, Fees, Tax, and Transaction Count.
 
 **Gender Analysis**  
 Provides an additional demographic view of transaction value.
 
 ### Interactive Filters
 
-Users can filter the dashboard by:
+Users can filter and explore the dashboard by:
 
 - Year
 - Dynamic Metric
 - Occupation
 - Merchant Category
+
+---
+
+## 💡 Key Insights
+
+Based on the 2024 dashboard view:
+
+- **Total transaction value reached approximately $135.62M** across roughly **15K transactions**, with an average transaction value of approximately **$9.02K**.
+- **Successful transactions accounted for approximately 85% of total transaction value**, making successful transactions the dominant contributor to overall financial activity.
+- The **Retail customer segment generated approximately $74M**, substantially outperforming the other customer segments and representing the largest source of transaction value.
+- **Premium and SME customers** were the next-largest segments, contributing approximately **$26M and $21M** respectively.
+- **Maharashtra recorded the highest transaction value among the displayed states at approximately $19.7M**, followed by Karnataka and Gujarat.
+- Transaction value was **relatively balanced across gender**, with female customers contributing approximately **51.3%** and male customers approximately **48.7%**.
+- Compared with the previous year, **Total Amount and Average Transaction Value declined slightly**, while **Total Fees and Total Tax showed modest growth**, highlighting differences between transaction value performance and fee/tax generation.
+
+These insights can be explored further through the report's interactive filters and dynamic metric selector.
 
 ---
 
@@ -167,11 +181,11 @@ Users can move from aggregated dashboard insights to individual transaction reco
 - Fees
 - Tax
 
-This page supports detailed investigation while retaining the report's interactive filtering experience.
+This provides a detailed analytical layer for investigating the individual transactions behind the aggregated dashboard results.
 
 ---
 
-## 💡 Analytical Capabilities Demonstrated
+## 🎯 Analytical Capabilities Demonstrated
 
 This project demonstrates practical experience in:
 
@@ -191,24 +205,6 @@ This project demonstrates practical experience in:
 - Customer segmentation
 - Dashboard UI/UX design
 - Power BI Service deployment
-
----
-
-## 📁 Repository Structure
-
-```text
-Finance-Analytics/
-│
-├── Finance_Analytics_Dashboard.pbix
-├── README.md
-│
-└── images/
-    ├── dashboard-overview.png
-    ├── transactions-page.png
-    └── data-model.png
-```
-
-The `.pbix` file is included in this repository for further exploration of the data model, DAX measures and report design.
 
 ---
 
